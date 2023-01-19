@@ -47,5 +47,21 @@ class HomeController extends Controller
 
         return $sub;
     }
+
+    public function div($num1, $num2) {
+        if ($num2 == 0) {
+            logger()->error('Divisor zero!');
+
+            abort(404);
+        } else {
+            $div = $num1 / $num2;
+
+            logger()->info('Div feita');
+
+            return $div;
+        }
+
+    }   
+    
 }
  
